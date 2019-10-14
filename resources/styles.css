@@ -1,0 +1,33 @@
+.background {
+  viewport-fill: black;
+}
+
+#timeLabel {
+  font-size: 120;
+  font-family: SevilleSharp-Book;
+  text-length: 32;
+  text-anchor: middle;
+  x: 50%;
+  y: 50%+40;
+  fill: white;
+}
+
+#dateLabel {
+  font-size: 30;
+  font-family: SevilleSharp-Book;
+  text-length: 32;
+  text-anchor: middle;
+  x: 50%;
+  y: 20%;
+  fill: grey;
+}
+
+#batteryLabel {
+  font-size: 30;
+  font-family: SevilleSharp-Book;
+  text-length: 4;
+  text-anchor: middle;
+  x: 80%;
+  y: 80%;
+  fill: grey;
+}
