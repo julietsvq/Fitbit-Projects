@@ -1,96 +1,68 @@
 ## Main clock face
 
+1. 	Let's start with the [Basic clock face](https://github.com/julietsvq/Fitbit_MainClock/tree/master/BasicClock).
 
-1. I will use a **FitBit Versa** device for this, but you could also use the [FitBit OS Simulator](https://simulator-updates.fitbit.com/download/latest/win).
+2. 	Go to the /resources/ folder and modify these files: 
 
-2. Log into [FitBit Studio](https://studio.fitbit.com) with your FitBit account.
-
-3. Click on **New Project** > **Digital Clock** > give it a name and **Create**. This will create a very basic clock face showing only the time. 
-
-4. Once your new project opens you will see the following folder structure: 
-
-> **/app/**
-> Application logic that executes on the FitBit device.  
-> It can: access the Device API, interact with the presentation layer, communicate with the companion, read and write settings.  
-> An index.js or index.ts non-empty file is required.
-
-> **/companion/**  
-> Logic which executes on the mobile device.  
-> It can: access the Companion API, make requests to the internet, communicate with the app.  
-> An index.js or index.ts non-empty file is required.
-
-> **/common/**
-> Files shared by the app and the companion. 
-
-> **/resources/**  
-> All resources which are bundled with the application during the build process.
-
-> &nbsp;&nbsp;**/resources/index.gui**  
-> &nbsp;&nbsp;SVG file where the application user interface markup is defined. It is mandatory.
-	
-> &nbsp;&nbsp;**/resources/widgets.gui**   
-> &nbsp;&nbsp;SVG file which controls which system widgets are available within the index.gui file. It is mandatory.
-	
-> &nbsp;&nbsp;**/resources/name.css**  
-> &nbsp;&nbsp;CSS files can be included in the app by creating a <link> in the index.gui file.
-	
-> &nbsp;&nbsp;**/resources/name.png** and **/resources/name.jpg**  
-> &nbsp;&nbsp;Image files which are included in the resources folder can be used in the presentation layer by referencing them within an <image> element in the index.gui.
-
-> **/settings/**  
-> App settings, written using React JSX.  
-> It can: be used to make an app configurable by the user.
-
-Other things to notice regarding these projects is that the app, common and companion folders can contain .js or .ts files.
-During the build process, the scripts are automatically compiled, bundled and optimized by the TypeScript compiler and rollup.js. This produces a single ECMAScript 5.1 file for the application, and another file for the companion.
-JavaScript is run on the device using the JerryScript engine.
-The /settings/ folder should contain a single React JSX file, named index.jsx.
-
-Limitations:
-> Max size of an app at installation time: 10 MB.
-> Max total file system space used by an installed app: 15 MB.
-
-5. In your FitBit device, go to **Settings** > **Developer Bridge** > click on it until it says **Connected to server**. 
-
-6. Back in **Fitbit Studio**, click on **Select a Device** > **Devices** > **Versa**. (if it doesn't appear click on **Refresh**)
-
-7. Click **Run** (it will automatically first **Build**).
-
-8. It will load your new clock face on your FitBit device.
-
-9. Now start customizing your clock face, for example: 
-
-Go to the styles.css file under /resources/ and change the background color: 
-	
+> index.gui, so that we add a new label and name each label accordingly: 
 ```
-	.background {
-		viewport-fill: black;
-	}
+		<svg class="background">
+		  <text id="timeLabel" />
+		  <text id="batteryLabel" />
+		</svg>
 ```
-	
-Or add a 300x300 pixel .jpg to the resources folder, then reference it the index.gui file under /resources/ like this:
-
+> styles.css, so that we update the time label name and customize the battery label appearance:
 ```
-	<svg> 
-		<image href="myimage.jpg" /> 
-		<text id="myLabel" />
-	</svg> 
+		#timeLabel {
+		  font-size: 80;
+		  font-family: System-Bold;
+		  text-length: 32;
+		  text-anchor: middle;
+		  x: 50%;
+		  y: 50%+40;
+		  fill: white;
+		}
+		
+		#batteryLabel {
+		  font-size: 20;
+		  font-family: System-Bold;
+		  text-length: 32;
+		  text-anchor: middle;
+		  x: 70%;
+		  y: 80%;
+		  fill: grey;
+		}
 ```
-Then **Run** to see the changes on your device.
 
-10. Although this sample was created using FitBit Studio, you now have CLI support for FitBit projects to build and run them. As you start to create your own projects remember that you can have source control via Git and you can use Visual Studio to code, just click on **Download** > **Export project** from FitBit Studio and once you have your project locally follow the steps you would normally follow to create your repo and start working from Visual Studio. You will want to add certain files to .gitignore, for example everything in the build and node-modules folders. 
-More info here: https://dev.fitbit.com/build/guides/command-line-interface
-As a summary these are the commands that you will typically use: 
+3. Now go to the /app/ folder and modify the index.js file:
 
-> **npm install** (only first time)
+> Add a new import to use the Power API: 
+```	
+		import { battery } from "power";
+```	
+> Update the time label reference and retrieve the battery label: 
+```			
+		const timeLabel = document.getElementById("timeLabel");
+		const batteryLabel = document.getElementById("batteryLabel");
+```	
+> Update the time label and battery label texts:
+```	
+		  var mins = util.zeroPad(today.getMinutes());
+		  var bat = Math.floor(battery.chargeLevel);
+		  
+		  if(bat < 16)
+		    batteryLabel.style.fill = "red";
+		  else if (bat < 30)
+		    batteryLabel.style.fill = "yellow"; 
+		  else
+		    batteryLabel.style.fill = "green"; 
+		  
+		  batteryLabel.text = bat + "%";
+		  timeLabel.text = hours + ":" + mins;
+```
 
-> **npx fitbit** 
+4. Run, you should now see the time and battery level on your FitBit device: 
 
-> (open the FitBit simulator, or enable device bridge on the Fitbit device)
+[Clock face](https://github.com/julietsvq/Fitbit-Projects/tree/master/MainClock/readme_images/clockface.png)
 
-> **connect device**
-
-> **build**
-
-> **install**
-
+5. In a similar way you can add date and other info to your clock face, check out the MainClock repo for further ideas.
