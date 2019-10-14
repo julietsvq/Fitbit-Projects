@@ -1,8 +1,5 @@
-# Fitbit_MainClock
-Basic clock face displaying time, date, battery and weather.
-
 ## 1. Basic clock face
-
+Basic clock face displaying time, date, battery and weather.
 
 	1. I will use a **FitBit Versa** device for this, but you could also use the [FitBit OS Simulator](https://simulator-updates.fitbit.com/download/latest/win).
 	
