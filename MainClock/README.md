@@ -63,6 +63,6 @@
 
 4. Run, you should now see the time and battery level on your FitBit device: 
 
-![Clock face](https://github.com/julietsvq/Fitbit-Projects/tree/master/MainClock/readme_images/clockface.png)
+![Clock face](https://github.com/julietsvq/Fitbit-Projects/blob/master/MainClock/readme_images/clockface.png)
 
 5. In a similar way you can add date and other info to your clock face, check out the MainClock repo for further ideas.
