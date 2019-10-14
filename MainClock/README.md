@@ -9,21 +9,21 @@
 
 4. Once your new project opens you will see the following folder structure: 
 
-**/app/**
-Application logic that executes on the FitBit device. 
-It can: access the Device API, interact with the presentation layer, communicate with the companion, read and write settings.
-An index.js or index.ts non-empty file is required.
+ **/app/**
+ Application logic that executes on the FitBit device. 
+ It can: access the Device API, interact with the presentation layer, communicate with the companion, read and write settings.
+ An index.js or index.ts non-empty file is required.
 
-**/companion/**
-Logic which executes on the mobile device.
-It can: access the Companion API, make requests to the internet, communicate with the app.
-An index.js or index.ts non-empty file is required.
+ **/companion/**
+ Logic which executes on the mobile device.
+ It can: access the Companion API, make requests to the internet, communicate with the app.
+ An index.js or index.ts non-empty file is required.
 
-**/common/**
-Files shared by the app and the companion. 
+ **/common/**
+ Files shared by the app and the companion. 
 
-**/resources/**
-All resources which are bundled with the application during the build process.
+ **/resources/**
+ All resources which are bundled with the application during the build process.
 
    **/resources/index.gui**
 	SVG file where the application user interface markup is defined. It is mandatory.
@@ -37,9 +37,9 @@ All resources which are bundled with the application during the build process.
    **/resources/*.png** and **/resources/*.jpg**
 	Image files which are included in the resources folder can be used in the presentation layer by referencing them within an <image> element in the index.gui.
 
-**/settings/**
-App settings, written using React JSX. 
-It can: be used to make an app configurable by the user.
+ **/settings/**
+ App settings, written using React JSX. 
+ It can: be used to make an app configurable by the user.
 
 Other things to notice regarding these projects is that the app, common and companion folders can contain .js or .ts files.
 During the build process, the scripts are automatically compiled, bundled and optimized by the TypeScript compiler and rollup.js. This produces a single ECMAScript 5.1 file for the application, and another file for the companion.
@@ -62,20 +62,17 @@ Limitations:
 
 Go to the styles.css file under /resources/ and change the background color: 
 	
-```
-	.background {
+```.background {
 		viewport-fill: black;
-	}
-```
+	}```
 	
 Or add a 300x300 pixel .jpg to the resources folder, then reference it the index.gui file under /resources/ like this:
 
-```
-	<svg> 
+```<svg> 
 		<image href="myimage.jpg" /> 
 		<text id="myLabel" />
-	</svg> 
-```
+	</svg>```
+	
 Then **Run** to see the changes on your device.
 
 10. Although this sample was created using FitBit Studio, you now have CLI support for FitBit projects to build and run them. As you start to create your own projects remember that you can have source control via Git and you can use Visual Studio to code, just click on **Download** > **Export project** from FitBit Studio and once you have your project locally follow the steps you would normally follow to create your repo and start working from Visual Studio. You will want to add certain files to .gitignore, for example everything in the build and node-modules folders. 
