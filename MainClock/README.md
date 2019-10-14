@@ -10,36 +10,36 @@
 4. Once your new project opens you will see the following folder structure: 
 
 &nbsp;&nbsp;&nbsp;**/app/**
- Application logic that executes on the FitBit device.\
- It can: access the Device API, interact with the presentation layer, communicate with the companion, read and write settings.\
- An index.js or index.ts non-empty file is required.
+&nbsp;&nbsp;&nbsp;Application logic that executes on the FitBit device.\
+&nbsp;&nbsp;&nbsp;It can: access the Device API, interact with the presentation layer, communicate with the companion, read and write settings.\
+&nbsp;&nbsp;&nbsp;An index.js or index.ts non-empty file is required.
 
 &nbsp;&nbsp;&nbsp;**/companion/**\
- Logic which executes on the mobile device.\
- It can: access the Companion API, make requests to the internet, communicate with the app.\
- An index.js or index.ts non-empty file is required.
+&nbsp;&nbsp;&nbsp;Logic which executes on the mobile device.\
+&nbsp;&nbsp;&nbsp;It can: access the Companion API, make requests to the internet, communicate with the app.\
+&nbsp;&nbsp;&nbsp;An index.js or index.ts non-empty file is required.
 
 &nbsp;&nbsp;&nbsp;**/common/**
- Files shared by the app and the companion. 
+&nbsp;&nbsp;&nbsp;Files shared by the app and the companion. 
 
 &nbsp;&nbsp;&nbsp;**/resources/**
- All resources which are bundled with the application during the build process.
+&nbsp;&nbsp;&nbsp;All resources which are bundled with the application during the build process.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**/resources/index.gui**\
-	SVG file where the application user interface markup is defined. It is mandatory.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SVG file where the application user interface markup is defined. It is mandatory.
 	
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**/resources/widgets.gui** \
-	SVG file which controls which system widgets are available within the index.gui file. It is mandatory.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SVG file which controls which system widgets are available within the index.gui file. It is mandatory.
 	
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**/resources/[name].css**\
-	CSS files can be included in the app by creating a <link> in the index.gui file.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CSS files can be included in the app by creating a <link> in the index.gui file.
 	
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**/resources/[name].png** and **/resources/[name].jpg**\
-	Image files which are included in the resources folder can be used in the presentation layer by referencing them within an <image> element in the index.gui.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Image files which are included in the resources folder can be used in the presentation layer by referencing them within an <image> element in the index.gui.
 
 &nbsp;&nbsp;&nbsp;**/settings/**\
- App settings, written using React JSX.\
- It can: be used to make an app configurable by the user.
+&nbsp;&nbsp;&nbsp;App settings, written using React JSX.\
+&nbsp;&nbsp;&nbsp;It can: be used to make an app configurable by the user.
 
 Other things to notice regarding these projects is that the app, common and companion folders can contain .js or .ts files.
 During the build process, the scripts are automatically compiled, bundled and optimized by the TypeScript compiler and rollup.js. This produces a single ECMAScript 5.1 file for the application, and another file for the companion.
@@ -47,8 +47,8 @@ JavaScript is run on the device using the JerryScript engine.
 The /settings/ folder should contain a single React JSX file, named index.jsx.
 
 Limitations:\
-	Max size of an app at installation time: 10 MB.\
-	Max total file system space used by an installed app: 15 MB.
+&nbsp;&nbsp;&nbsp;Max size of an app at installation time: 10 MB.\
+&nbsp;&nbsp;&nbsp;Max total file system space used by an installed app: 15 MB.
 
 5. In your FitBit device, go to **Settings** > **Developer Bridge** > click on it until it says **Connected to server**. 
 
@@ -82,15 +82,15 @@ Then **Run** to see the changes on your device.
 More info here: https://dev.fitbit.com/build/guides/command-line-interface
 As a summary these are the commands that you will typically use: 
 
-**npm install** (only first time)
+&nbsp;&nbsp;&nbsp;**npm install** (only first time)
 
-**npx fitbit** 
+&nbsp;&nbsp;&nbsp;**npx fitbit** 
 
-(open the FitBit simulator, or enable device bridge on the Fitbit device)
+&nbsp;&nbsp;&nbsp;(open the FitBit simulator, or enable device bridge on the Fitbit device)
 
-**connect device**
+&nbsp;&nbsp;&nbsp;**connect device**
 
-**build**
+&nbsp;&nbsp;&nbsp;**build**
 
-**install**
+&nbsp;&nbsp;&nbsp;**install**
 
