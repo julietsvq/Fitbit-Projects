@@ -1,9 +1,9 @@
-## 1. Basic clock face
+## Main clock face
 
 
 1. I will use a **FitBit Versa** device for this, but you could also use the [FitBit OS Simulator](https://simulator-updates.fitbit.com/download/latest/win).
 
-2. Log into **FitBit Studio** with your FitBit account at https://studio.fitbit.com
+2. Log into [FitBit Studio](https://studio.fitbit.com) with your FitBit account.
 
 3. Click on **New Project** > **Digital Clock** > give it a name and **Create**. This will create a very basic clock face showing only the time. 
 
@@ -25,16 +25,16 @@ Files shared by the app and the companion.
 **/resources/**
 All resources which are bundled with the application during the build process.
 
-	**/resources/index.gui**
+   **/resources/index.gui**
 	SVG file where the application user interface markup is defined. It is mandatory.
 	
-	**/resources/widgets.gui**
+   **/resources/widgets.gui**
 	SVG file which controls which system widgets are available within the index.gui file. It is mandatory.
 	
-	**/resources/*.css**
+   **/resources/*.css**
 	CSS files can be included in the app by creating a <link> in the index.gui file.
 	
-	**/resources/*.png** and **/resources/*.jpg**
+   **/resources/*.png** and **/resources/*.jpg**
 	Image files which are included in the resources folder can be used in the presentation layer by referencing them within an <image> element in the index.gui.
 
 **/settings/**
@@ -62,20 +62,20 @@ Limitations:
 
 Go to the styles.css file under /resources/ and change the background color: 
 	
-	```
+```
 	.background {
 		viewport-fill: black;
 	}
-	```
+```
 	
 Or add a 300x300 pixel .jpg to the resources folder, then reference it the index.gui file under /resources/ like this:
 
-	```
+```
 	<svg> 
 		<image href="myimage.jpg" /> 
 		<text id="myLabel" />
 	</svg> 
-	```
+```
 Then **Run** to see the changes on your device.
 
 10. Although this sample was created using FitBit Studio, you now have CLI support for FitBit projects to build and run them. As you start to create your own projects remember that you can have source control via Git and you can use Visual Studio to code, just click on **Download** > **Export project** from FitBit Studio and once you have your project locally follow the steps you would normally follow to create your repo and start working from Visual Studio. You will want to add certain files to .gitignore, for example everything in the build and node-modules folders. 
