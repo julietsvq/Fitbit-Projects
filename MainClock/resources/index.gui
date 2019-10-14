@@ -2,4 +2,5 @@
   <text id="timeLabel" />
   <text id="dateLabel" />
   <text id="batteryLabel" />
+  <text id="weatherLabel" />
 </svg>

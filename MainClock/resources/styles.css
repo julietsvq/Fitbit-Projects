@@ -31,3 +31,13 @@
   y: 80%;
   fill: grey;
 }
+
+#weatherLabel {
+  font-size: 30;
+  font-family: SevilleSharp-Book;
+  text-length: 17;
+  text-anchor: middle;
+  x: 20%;
+  y: 80%;
+  fill: blue;
+}

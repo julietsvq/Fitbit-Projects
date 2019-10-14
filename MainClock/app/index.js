@@ -9,6 +9,7 @@ clock.granularity = "minutes";
 const timeLabel = document.getElementById("timeLabel");
 const dateLabel = document.getElementById("dateLabel");
 const batteryLabel = document.getElementById("batteryLabel");
+const weatherLabel = document.getElementById("weatherLabel");
 
 clock.ontick = (evt) => {
   var today = evt.date;
@@ -40,4 +41,5 @@ clock.ontick = (evt) => {
   batteryLabel.text = bat + "%";
   timeLabel.text = hours + ":" + mins;
   dateLabel.text = wd + ' ' + d + ' ' + m + ' ' + y;
+  weatherLabel.text = 27;
 }
