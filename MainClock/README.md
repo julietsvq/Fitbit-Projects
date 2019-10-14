@@ -46,8 +46,8 @@ During the build process, the scripts are automatically compiled, bundled and op
 JavaScript is run on the device using the JerryScript engine.
 The /settings/ folder should contain a single React JSX file, named index.jsx.
 
-Limitations:\
-> Max size of an app at installation time: 10 MB.\
+Limitations:
+> Max size of an app at installation time: 10 MB.
 > Max total file system space used by an installed app: 15 MB.
 
 5. In your FitBit device, go to **Settings** > **Developer Bridge** > click on it until it says **Connected to server**. 
