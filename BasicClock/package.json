@@ -1,6 +1,5 @@
 {
   "fitbit": {
-    "appUUID": "07fc50b7-0cb6-4591-932f-a1d546038f1b",
     "appType": "clockface",
     "appDisplayName": "DigitalClockProject",
     "iconFile": "resources/icon.png",
