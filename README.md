@@ -7,6 +7,9 @@ Basic style clock face which displays time.
 ## 2. [Main clock face](https://github.com/julietsvq/Fitbit_MainClock/tree/master/MainClock)
 Basic style clock face which displays time, date, battery level and weather forecast.
 
+## 3. [Device multi app](https://github.com/julietsvq/Fitbit_MainClock/tree/master/DeviceMultiApp)
+App which displays values from the different sensors on the FitBit device.
+
 ---
 
 You can follow the steps by step from each project or run each of them directly, to do so run: 

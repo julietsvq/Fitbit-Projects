@@ -1,13 +1,10 @@
 {
   "fitbit": {
     "appType": "app",
-    "appDisplayName": "DeviceMultiApp",
+    "appDisplayName": "MultiApp",
     "iconFile": "resources/icon.png",
     "wipeColor": "#607d8b",
-    "requestedPermissions": [
-      "access_heart_rate",
-      "access_activity"
-    ],
+    "requestedPermissions": [],
     "buildTargets": [
       "higgs",
       "meson",
@@ -15,7 +12,7 @@
     ],
     "i18n": {
       "en": {
-        "name": "DeviceMultiApp"
+        "name": "MultiApp"
       }
     },
     "defaultLanguage": "en-US"
