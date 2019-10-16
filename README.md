@@ -9,7 +9,7 @@ Basic style clock face which displays time, date, battery level and weather fore
 
 ---
 
-If you wish to run these projects directly you may do: 
+You can follow the steps by step from each project or run each of them directly, to do so run: 
 
 ` git clone https://github.com/julietsvq/Fitbit-Projects.git Fitbit-Projects `
 
